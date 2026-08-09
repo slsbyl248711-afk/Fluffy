@@ -9,8 +9,15 @@ const signToken = (id) => {
 
 export const signup = async (req, res) => {
   try {
-    const { name, email, password, role } = req.body;
-    const newUser = await User.create({ name, email, password, role });
+    const { name, email, password, phone, role } = req.body;
+
+    // Always store email in lowercase to prevent case-sensitivity issues
+    const normalizedEmail = email ? email.toLowerCase().trim() : undefined;
+    if (!normalizedEmail) {
+      return res.status(400).json({ status: 'error', message: 'Email is required.' });
+    }
+
+    const newUser = await User.create({ name, email: normalizedEmail, password, phone, role });
     const token = signToken(newUser._id);
     newUser.password = undefined;
     res.status(201).json({ status: 'success', token, data: { user: newUser } });
@@ -25,7 +32,11 @@ export const login = async (req, res) => {
     if (!email || !password) {
       return res.status(400).json({ status: 'error', message: 'Please provide email and password' });
     }
-    const user = await User.findOne({ email }).select('+password');
+
+    // Always search for email in lowercase to match how it's stored and sent from frontend
+    const normalizedEmail = email.toLowerCase().trim();
+
+    const user = await User.findOne({ email: normalizedEmail }).select('+password');
     if (!user || !(await user.correctPassword(password, user.password))) {
       return res.status(401).json({ status: 'error', message: 'Incorrect email or password' });
     }
