@@ -76,4 +76,4 @@ class ProductService {
   }
 }
 
-module.exports = ProductService;
+export default ProductService;

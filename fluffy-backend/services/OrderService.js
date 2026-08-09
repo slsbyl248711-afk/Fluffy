@@ -55,4 +55,4 @@ class OrderService {
   }
 }
 
-module.exports = OrderService;
+export default OrderService;

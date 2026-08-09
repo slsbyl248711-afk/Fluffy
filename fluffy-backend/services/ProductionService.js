@@ -33,4 +33,4 @@ class ProductionService {
   }
 }
 
-module.exports = ProductionService;
+export default ProductionService;

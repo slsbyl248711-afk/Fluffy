@@ -36,4 +36,4 @@ class WorkerService {
   }
 }
 
-module.exports = WorkerService;
+export default WorkerService;

@@ -1,3 +1,5 @@
+import { Client } from "@gradio/client";
+
 class VTOService {
   async tryOn(humanImage, productImage, category) {
     if (!humanImage || !productImage) {
@@ -56,4 +58,4 @@ class VTOService {
 }
 
 
-module.exports = VTOService;
+export default VTOService;
