@@ -5,7 +5,7 @@ import { Lock, Eye, EyeOff, Loader, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import axios from "axios";
 
-const API_BASE_URL = 'https://fluffy-atelier-vision-production.up.railway.app/api/v1';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://fluffy-production-cb3b.up.railway.app/api/v1';
 
 const ResetPassword = () => {
   const [password, setPassword] = useState("");

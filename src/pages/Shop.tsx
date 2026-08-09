@@ -5,7 +5,7 @@ import ProductCard from "@/components/ProductCard";
 import type { Product } from "@/data/products";
 import { Loader } from "lucide-react";
 
-const API_BASE_URL = 'https://fluffy-atelier-vision-production.up.railway.app/api/v1';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://fluffy-production-cb3b.up.railway.app/api/v1';
 
 const Shop = () => {
   const [activeCategory, setActiveCategory] = useState("All");
