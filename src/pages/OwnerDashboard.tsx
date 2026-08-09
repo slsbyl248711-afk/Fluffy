@@ -51,7 +51,7 @@ const StatCard = ({ label, value, icon, trend, accent }: { label: string; value:
   </motion.div>
 );
 
-const API_BASE_URL = 'https://fluffy-atelier-vision-production.up.railway.app/api/v1';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://fluffy-atelier-vision-production.up.railway.app/api/v1';
 
 const OwnerDashboard = () => {
   const [activeTab, setActiveTab] = useState<Tab>("products");

@@ -30,7 +30,7 @@ const whitelist = [
   'http://localhost:8080',
   'http://localhost:3000',
   'http://localhost:5173', // منفذ Vite
-  'https://fluffy-atelier-vision.vercel.app', // Vercel Frontend URL
+  'https://fluffy-ruby.vercel.app', // Vercel Frontend URL
 ];
 
 if (process.env.FRONTEND_URL) {
