@@ -1,5 +1,5 @@
-const Order = require('../models/Order');
-const Product = require('../models/Product');
+import Order from '../models/Order.js';
+import Product from '../models/Product.js';
 
 class OrderService {
   
