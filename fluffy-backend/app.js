@@ -75,9 +75,6 @@ const PORT = process.env.PORT || 3000;
 const DATABASE_URL = process.env.DATABASE_URL || process.env.MONGODB_URI || process.env.MONGO_URL || 'mongodb://localhost:27017/fluffy';
 
 async function startServer() {
-  // --- DEBUGGING LINE TO CHECK ENV VARS ---
-  console.log(`Attempting to connect with DATABASE_URL: ${process.env.DATABASE_URL}`);
-  // -----------------------------------------
   try {
     await mongoose.connect(DATABASE_URL);
     console.log('تم الاتصال بقاعدة بيانات MongoDB بنجاح');
