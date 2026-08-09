@@ -72,7 +72,7 @@ app.use((err, req, res, next) => {
 });
 
 const PORT = process.env.PORT || 3000;
-const DATABASE_URL = process.env.DATABASE_URL || process.env.MONGODB_URI || 'mongodb://localhost:27017/fluffy';
+const DATABASE_URL = process.env.DATABASE_URL || process.env.MONGODB_URI || process.env.MONGO_URL || 'mongodb://localhost:27017/fluffy';
 
 async function startServer() {
   try {
